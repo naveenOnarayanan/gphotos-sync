@@ -6,6 +6,7 @@ from typing import List, Optional
 
 from json import load, dump, JSONDecodeError
 import logging
+import time
 
 log = logging.getLogger(__name__)
 
@@ -100,6 +101,7 @@ class Authorize:
             print(f"Please go here and authorize, {authorization_url}\n", )
 
             # Get the authorization verifier code from the callback url
+            time.sleep(10)
             response_code = input("Paste the response token here:\n")
 
             # Fetch the access token
